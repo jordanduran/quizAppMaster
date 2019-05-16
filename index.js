@@ -73,7 +73,11 @@ $(document).ready(function(){
     $('.submit').show();
   });
   
-  $(".submit-button").click(function(event){
+  $("ul.list").on("submit", ".submit-button", function(event){
+    event.preventDefault();
+    console.log("Form submitted");
+    let userAnswer = $('input[name=answer]:checked', '.submit-button').val();
+    console.log(userAnswer);
     if($('li.selected').length){
       var answer = $('li.selected').attr('id');
       checkAnswer(answer);
@@ -105,9 +109,13 @@ function displayQuestion(){
     var listQuestion = myQuestions[current];
     $('h2').text(listQuestion.question);
     $('ul.list').html('');
+    $('ul.list').append('<form class="submit-button">')
     for (var i = 0; i < listQuestion.answers.length; i++) {
-      $('ul.list').append('<li id = "'+i+'">'+listQuestion.answers[i] +'</li>');
+      $('ul.list').append('<div><label id = "'+i+'">'+listQuestion.answers[i] +`</label><input type="radio" name="answer" value="${listQuestion.answers[i]}" checked></div>`);
     }
+    $('ul.list').append('<input type="submit" value="Check Answer"/>');
+
+    $('ul.list').append('</form>')
   } else {
     // show summary that says how many you got correct
     displayScore();

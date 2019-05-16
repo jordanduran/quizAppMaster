@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-  <html lang="en"</lang>
 	<title>Odd Quiz</title>
 	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -12,7 +11,8 @@
 </head>
 <body>
 
-	<!-- */********START PAGE*********/* -->
+  <!-- */********START PAGE*********/* -->
+  <main>
   <h1>Odd But True</h1>
 
   <div class="odd-logo">
@@ -28,30 +28,29 @@
     
 <!-- */*******QUESTIONS********/* -->
   
-    <div class = 'questions'>
+    <section class = 'questions'>
       <h2 class='question'></h2>
       <p class= "score"> Score:  </p>
       <ul class ="list">
       </ul>
       
       <div class='submit'>
-        <button class="submit-button">Check Answer</button> 
       </div>
       <div class='next'>
         <button class="next-button">Next</button> 
       </div>
       
       <p class = 'question-number'></p>
-    </div>
+    </section>
 
   <!-- */***********COMPLETED PAGE************ -->
   
-    <div class = 'end-quiz'> 
+    <section class = 'end-quiz'> 
       <p class = 'end-score'></p>
       <p class='comment'></p>
       <button class="retake-button">RESTART</button>
-    </div>
-
+    </section>
+  </main>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="index.js"></script>
 </body>
