@@ -174,3 +174,10 @@ function displayScore() {
     $(".comment").text("Thanks for playing!");
   }
 }
+
+function createQuiz() {
+  startQuiz();
+  handleNextButton();
+  handleSubmitButton();
+  handleRetakeButton();
+}
